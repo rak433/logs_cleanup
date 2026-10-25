@@ -14,6 +14,7 @@ usage(){
 
 if [ -z "$source_dir" ]; then
    echo "ERROR::missing perameters"
+   usage
 fi
 
 if [ ! -d "$source_dir" ]; then
