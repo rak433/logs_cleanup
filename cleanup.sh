@@ -17,6 +17,6 @@ if [ -z "$source_dir" ]; then
    usage
 fi
 
-if [ -d "$source_dir" ]; then
+if [ ! -d "$source_dir" ]; then
    echo "${R}ERROR : $source_dir does not exist${N}"
 fi
