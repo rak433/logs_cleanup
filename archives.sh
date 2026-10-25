@@ -34,5 +34,5 @@ files_to_archive=$(find $source_folder -name "*.log" -type f -mtime +$days)
 
 if [ -z $files_to_archive ]; then
    echo -e "No log files found older than $days days in $source_dir"
-   exit o
+   exit 0
 fi
