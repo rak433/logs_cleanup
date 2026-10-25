@@ -28,3 +28,11 @@ if [ ! -d "$dest_dir" ]; then
    exit 1
 fi
 
+echo "scaning files older than $days days in $source_dir"
+
+files_to_archive=$(find $source_folder -name "*.log" -type f -mtime +$days)
+
+if [ -z $files_to_archive ]; then
+   echo -e "No log files found older than $days days in $source_dir"
+   exit o
+fi
