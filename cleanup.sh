@@ -16,3 +16,7 @@ if [ -z "$source_dir" ]; then
    echo "ERROR : missing perameters"
    usage
 fi
+
+if [ -d "$source_dir" ]; then
+   echo "${R}ERROR : $source_dir does not exist${N}"
+fi
