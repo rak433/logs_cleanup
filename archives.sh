@@ -47,7 +47,7 @@ if [ $? -ne 0 ]; then
    echo "logs archival is failed"
    exit 1
 else
-    echo "logs are archived"
+    echo "logs are archived $file_name"
     while IFS= read -r line
     do
         echo "files to be deleted $line"
@@ -55,5 +55,7 @@ else
         echo "deleted files $line"
     done <<< "$files_to_archive"
 fi
+
+
 
 
