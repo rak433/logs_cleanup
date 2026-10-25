@@ -17,3 +17,14 @@ if [ -z "$source_dir" ] || [ -z "$dest_dir" ]; then
    echo "Either source or destination directorey missing"
    usage
 fi
+
+if [ ! -d "$source_dir" ]; then
+   echo "ERROR::directorey not exist"
+   exit 1
+fi
+
+if [ ! -d "$dest_dir" ]; then
+   echo "ERROR::directorey does not exist"
+   exit 1
+fi
+
