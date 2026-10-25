@@ -37,3 +37,23 @@ if [ -z $"files_to_archive" ]; then
    exit 0
 fi
 
+timestamp=$(date +%Y-%m-%d-%H-%M-%S)
+
+file_name="$dest_dir/logs-$timestamp.tar.gz"
+
+tar -czf $file_name $files_to_archive
+
+if [ $? -ne 0 ]; then
+   echo "logs archival is failed"
+   exit 1
+else
+    echo "logs are archived"
+    while IFS= read -r line
+    do
+        echo "files to be deleted $line"
+        rm -f $line
+        echo "deleted files $line"
+    done <<< "$files_to_archive"
+fi
+
+
