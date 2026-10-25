@@ -22,7 +22,7 @@ if [ ! -d "$source_dir" ]; then
 fi
 
 echo "scaning files older than $days in $source_dir"
-files_to_delete=(find $source_dir -nmae "*.log" -type f -mtime +$days)
+files_to_delete=(find $source_dir -name "*.log" -type f -mtime +$days)
 echo "Printing older files ${files_to_delete}"
 
 if [ -z "$files_to_delete" ]; then
